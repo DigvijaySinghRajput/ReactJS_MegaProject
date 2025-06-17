@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+// reducer for authentication
+// add to store
 const initialState = {
   status: false,
   userData: null,

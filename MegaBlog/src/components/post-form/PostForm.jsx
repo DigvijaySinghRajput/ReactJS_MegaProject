@@ -72,7 +72,10 @@ function PostForm({ post }) {
         setValue("slug", slugTransform(value.title, { shouldValidate: true }));
       }
     });
-  });
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, [watch, slugTransform, setValue]);
 
   return (
     <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">

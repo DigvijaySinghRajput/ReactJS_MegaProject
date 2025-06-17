@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import authservice from "../appwrite/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import { login } from "../store/authSlice";
-import { Button, Input, logo } from "./index";
-
+import { Button, Input } from "./index";
+import Logo from "./logo";
 function Signup() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -34,7 +34,7 @@ function Signup() {
       >
         <div className="mb-2 flex justify-center">
           <span className="inline-block w-full max-w-[100px]">
-            <logo width="100%" />
+            <Logo width="100%" />
           </span>
         </div>
         <h2 className="text-center text-2xl font-bold leading-tight">

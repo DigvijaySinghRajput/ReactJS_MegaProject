@@ -20,14 +20,14 @@ export class Authservice {
         password,
         name
       );
+      if (userAccount) {
+        //call another method
+        return this.login({ email, password });
+      } else {
+        return userAccount;
+      }
     } catch (error) {
       throw error;
-    }
-    if (userAccount) {
-      //call another method
-      return this.login({ email, password });
-    } else {
-      return userAccount;
     }
   }
 
@@ -45,7 +45,6 @@ export class Authservice {
     } catch (error) {
       console.log("Appwrite service :: getCurrentUser :: error", error);
     }
-
     return null; // if no user logged in return null instead of this if-else can also be used
   }
 

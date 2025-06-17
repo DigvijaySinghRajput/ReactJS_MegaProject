@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { login as authlogin } from "../store/authSlice";
-import { Button, Input, logo } from "./index";
+import { Button, Input, Logo } from "./index";
 import { useDispatch } from "react-redux";
 import authservice from "../appwrite/auth";
 import { useForm } from "react-hook-form";
@@ -32,7 +32,7 @@ function Login() {
       >
         <div className="mb-2 flex justify-center">
           <span className="inline-block w-full max-w-[100px]">
-            <logo width="100%" />
+            <Logo width="100%" />
           </span>
         </div>
         <h2 className="text-center text-2xl font-bold leading-tight">
@@ -67,7 +67,7 @@ function Login() {
               label="Password"
               type="password"
               placeholder="Enter your password"
-              {...register(password, {
+              {...register("password", {
                 required: true,
               })}
             />
