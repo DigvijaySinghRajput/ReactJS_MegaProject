@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import authservice from "./appwrite/auth";
 import { Outlet } from "react-router-dom";
 import { Footer, Header } from "./components/index";
+import { login, logout } from "./store/authSlice";
 
 function App() {
   const [loading, setloading] = useState(true);
@@ -16,8 +17,11 @@ function App() {
         if (userData) {
           dispatch(login({ userData }));
         } else {
-          dispatch(logout());
+          dispatch(logout({}));
         }
+      })
+      .catch((error) => {
+        console.log(error);
       })
       .finally(() => setloading(false));
   }, []);
