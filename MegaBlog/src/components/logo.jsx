@@ -1,7 +1,13 @@
 import React from "react";
 
-function logo({ width = "100px" }) {
-  return <div>logo</div>;
+function Logo({ className = "" }) {
+  return (
+    <img
+      src="/logo.png" // Your logo file in public folder or assets
+      alt="App Logo"
+      className={className}
+    />
+  );
 }
 
-export default logo;
+export default Logo;
